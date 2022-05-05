@@ -110,13 +110,16 @@ public class FrmRegistraJugadorDatePicker extends JFrame implements ActionListen
 	protected void actionPerformedBtnRegistrarJButton(ActionEvent e) {
 		String nom = txtNombre.getText();
 		String ape = txtApellido.getText();
-		Date fec = new Date(txtFecha.getDate().getTime());
+
 		
 		if (!nom.matches(Validaciones.TEXTO)) {
 			mensaje("El nombre es de 2 a 20 caracteres");
 		}else if (!ape.matches(Validaciones.TEXTO)) {
 			mensaje("El apellido es de 2 a 20 caracteres");
+		}else if (txtFecha.getDate()== null) {
+			mensaje("Seleccione la fecha");
 		}else {
+			Date fec = new Date(txtFecha.getDate().getTime());
 			Jugador obj = new Jugador();
 			obj.setNombre(nom);
 			obj.setApellido(ape);

@@ -1,4 +1,4 @@
-package gui.relacionada;
+package gui.registro.relacionada;
 
 import javax.swing.JComboBox;
 import javax.swing.JFrame;

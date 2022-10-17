@@ -1,4 +1,4 @@
-package gui.relacionada;
+package gui.registro.relacionada;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -15,25 +15,25 @@ import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-public class FrmRegistraDirector extends JFrame implements ActionListener 
+public class FrmRegistraClub extends JFrame implements ActionListener 
 							{
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	//Variables globales
-	JLabel lblTitulo, lblNombre, lblGrado, lblFecha;
+	JLabel lblTitulo, lblNombre, lblFecha;
 	JTextField  txtNombre, txtFecha;
 	JButton btnRegistrar;
-	private JComboBox<String> cboGrado;
+	private JComboBox<String> cboPais;
 	
 	//Constructor
-	public FrmRegistraDirector(){
+	public FrmRegistraClub(){
 		setTitle("Registro de Jugador");
-		setBounds(10,10,544,312);
+		setBounds(10,10,544,329);
 		getContentPane().setLayout(null);
 		
-		lblTitulo = new JLabel("Registro de Director");
+		lblTitulo = new JLabel("Registro de Club");
 		lblTitulo.setHorizontalAlignment(JLabel.CENTER);
 		lblTitulo.setForeground(Color.RED);
 		lblTitulo.setBackground(Color.WHITE);
@@ -47,30 +47,30 @@ public class FrmRegistraDirector extends JFrame implements ActionListener
 		getContentPane().add(lblNombre);		
 		
 		txtNombre = new JTextField();
-		txtNombre.setBounds(200, 80, 284, 25);
+		txtNombre.setBounds(200, 80, 221, 25);
 		getContentPane().add(txtNombre);
-
-		lblGrado = new JLabel("Grado");
-		lblGrado.setBounds(30, 152, 120, 25);
-		getContentPane().add(lblGrado);
 		
-		lblFecha = new JLabel("Fecha nacimiento");
+		lblFecha = new JLabel("Fecha creaci\u00F3n");
 		lblFecha.setBounds(30, 116, 120, 25);
 		getContentPane().add(lblFecha);		
 		
 		txtFecha = new JTextField();
-		txtFecha.setBounds(200, 116, 185, 25);
+		txtFecha.setBounds(200, 116, 120, 25);
 		getContentPane().add(txtFecha);	
 	
 		btnRegistrar = new JButton("Registrar");
 		btnRegistrar.addActionListener(this);
-		btnRegistrar.setIcon(new ImageIcon(FrmRegistraDirector.class.getResource("/iconos/save.gif")));
-		btnRegistrar.setBounds(213,201,120,33);
+		btnRegistrar.setIcon(new ImageIcon(FrmRegistraClub.class.getResource("/iconos/save.gif")));
+		btnRegistrar.setBounds(210,212,120,33);
 		getContentPane().add(btnRegistrar);
 		
-		cboGrado = new JComboBox<String>();
-		cboGrado.setBounds(200, 153, 185, 22);
-		getContentPane().add(cboGrado);
+		JLabel lblPas = new JLabel("Pa\u00EDs");
+		lblPas.setBounds(30, 157, 120, 25);
+		getContentPane().add(lblPas);
+		
+		cboPais = new JComboBox<String>();
+		cboPais.setBounds(200, 158, 221, 22);
+		getContentPane().add(cboPais);
 
 	}
 	
@@ -82,7 +82,7 @@ public class FrmRegistraDirector extends JFrame implements ActionListener
 			e.printStackTrace();
 		}
 		
-		FrmRegistraDirector frm = new FrmRegistraDirector();
+		FrmRegistraClub frm = new FrmRegistraClub();
 		frm.setVisible(true);
 	}
 
